@@ -1,0 +1,45 @@
+{
+ "stil": "hybrid",
+ "szenen": [
+  {
+   "vo": "Ihr Garten könnte der schönste Ort Ihres Zuhauses sein. Gerade ist er vor allem: Arbeit.",
+   "bild": "Background: realistic photo of an overgrown messy German backyard with knee-high grass. Composited into the photo: a flat vector cartoon homeowner couple (man in blue shirt, woman with red hair) standing with hands on hips looking overwhelmed.",
+   "motion": "The cartoon couple shake their heads, the man scratches his head, grass sways slightly."
+  },
+  {
+   "vo": "GrünWerk plant, baut und pflegt Ihren Garten – alles aus einer Hand.",
+   "bild": "Background: realistic photo of a tidy German front yard and driveway. Composited: a flat vector cartoon gardener with green polo, green cap and a small beard, waving cheerfully next to an illustrated cartoon wheelbarrow full of plants.",
+   "motion": "The cartoon gardener waves warmly and pats the wheelbarrow, a cartoon bird lands briefly."
+  },
+  {
+   "vo": "Vom ersten Entwurf bis zur fertigen Terrasse sehen Sie vorher, was es kostet.",
+   "bild": "Background: realistic photo of a terrace under construction with stacked stone slabs. Composited: the same cartoon gardener (green polo, cap, beard) unrolling a large white plan sheet, the cartoon couple looking at it curiously.",
+   "motion": "The gardener unrolls the plan with a flourish, the couple lean in and nod."
+  },
+  {
+   "vo": "Unsere Gärtner kommen aus Ihrer Region – pünktlich, ordentlich und zum Festpreis.",
+   "bild": "Background: realistic photo of fresh flower beds in a German garden. Composited: the same cartoon gardener kneeling and planting a cartoon shrub, the cartoon woman giving a thumbs up beside him.",
+   "motion": "The gardener sets the plant and firms the soil, the woman gives a happy thumbs up."
+  },
+  {
+   "vo": "Über vierhundert Gärten in zehn Jahren – schauen Sie sich unsere Projekte gern an.",
+   "bild": "Background: realistic split photo - left a plain boring lawn, right the same garden beautifully finished with terrace and beds. Composited: the cartoon couple stepping happily from the left side to the right side.",
+   "motion": "The couple walk from the dull half into the beautiful half and spread their arms happily."
+  },
+  {
+   "vo": "GrünWerk. Draußen wird's schön. Sichern Sie sich jetzt Ihren kostenlosen Vor-Ort-Termin.",
+   "bild": "Background: realistic photo of a beautiful finished German garden at golden hour. Composited: the cartoon couple relaxing in illustrated deck chairs with drinks, the cartoon gardener tipping his cap in the foreground.",
+   "motion": "The gardener tips his cap, the couple raise their glasses, warm light glows."
+  }
+ ],
+ "stimme": "Charon",
+ "ton": "Bodenständiger, freundlicher deutscher Erzähler. Direkt und sympathisch, regional geerdet. An Absatzenden eine Pause.",
+ "zeilen": [
+  "Ihr Garten könnte der schönste Ort Ihres Zuhauses sein. Gerade ist er vor allem: Arbeit.",
+  "GrünWerk plant, baut und pflegt Ihren Garten – alles aus einer Hand.",
+  "Vom ersten Entwurf bis zur fertigen Terrasse sehen Sie vorher, was es kostet.",
+  "Unsere Gärtner kommen aus Ihrer Region – pünktlich, ordentlich und zum Festpreis.",
+  "Über vierhundert Gärten in zehn Jahren – schauen Sie sich unsere Projekte gern an.",
+  "GrünWerk. Draußen wird's schön. Sichern Sie sich jetzt Ihren kostenlosen Vor-Ort-Termin."
+ ]
+}

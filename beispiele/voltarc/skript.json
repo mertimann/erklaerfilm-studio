@@ -1,0 +1,45 @@
+{
+ "stil": "cinematic",
+ "szenen": [
+  {
+   "vo": "Jede Nacht verschenken deutsche Fabriken Strom im Wert von Millionen.",
+   "bild": "Wide view of a modern German factory campus at night: clean flat-roof halls with glass fronts, LED-lit interiors glowing warm, a tidy parking lot, wind turbines far on the horizon, crisp cool night sky.",
+   "motion": "Slow gentle push towards the glowing hall, interior lights flicker subtly, thin clouds drift."
+  },
+  {
+   "vo": "Die Maschinen stehen still – aber der Zähler läuft weiter.",
+   "bild": "Inside a modern spotless production hall: current-day CNC machining centers and a fiber laser cutter standing idle in half-dark, blue standby LEDs, one bright digital electricity meter panel glowing on a column, clean epoxy floor reflecting the light.",
+   "motion": "Camera glides slowly along the idle machines, standby LEDs pulse softly, the meter display flickers."
+  },
+  {
+   "vo": "VoltArc speichert günstigen Nachtstrom direkt in Ihrer Halle.",
+   "bild": "A sleek white modern battery storage cabinet, size of a large wardrobe, being rolled on a lift trolley into the clean hall by two technicians in modern grey-orange workwear, bright even lighting.",
+   "motion": "The technicians roll the cabinet into place, one steadies it, subtle camera follow."
+  },
+  {
+   "vo": "Und tagsüber, wenn Strom teuer ist, läuft Ihre Produktion aus dem Speicher.",
+   "bild": "The modern hall in bright daylight production: robotic arm loading a CNC machine, a worker with tablet supervising, the white battery cabinet standing at the wall with a calm green charge indicator.",
+   "motion": "The robotic arm moves precisely, the worker taps the tablet, the charge indicator breathes green."
+  },
+  {
+   "vo": "Bis zu vierzig Prozent weniger Stromkosten – installiert in sechs Wochen, ohne Umbau.",
+   "bild": "Golden morning light outside the hall: two engineers in workwear and a manager shaking hands beside the delivered white battery cabinet on a small truck lift, modern facade behind them.",
+   "motion": "The handshake completes, warm light rises, the truck lift lowers slightly."
+  },
+  {
+   "vo": "VoltArc. Ihre Energie, Ihr Takt. Fordern Sie jetzt Ihre Potenzialanalyse an.",
+   "bild": "Hero composition at blue hour: the white battery cabinet with a subtle warm glow standing before the modern German factory, clean and monumental, calm sky.",
+   "motion": "Very slow low push-in, the cabinet glow breathes softly, sky darkens gently."
+  }
+ ],
+ "stimme": "Charon",
+ "ton": "Tiefer, ruhiger deutscher Erzähler mit Gewicht. Souverän, filmisch, kein Werbeton. An Absatzenden eine deutliche Pause.",
+ "zeilen": [
+  "Jede Nacht verschenken deutsche Fabriken Strom im Wert von Millionen.",
+  "Die Maschinen stehen still – aber der Zähler läuft weiter.",
+  "VoltArc speichert günstigen Nachtstrom direkt in Ihrer Halle.",
+  "Und tagsüber, wenn Strom teuer ist, läuft Ihre Produktion aus dem Speicher.",
+  "Bis zu vierzig Prozent weniger Stromkosten – installiert in sechs Wochen, ohne Umbau.",
+  "VoltArc. Ihre Energie, Ihr Takt. Fordern Sie jetzt Ihre Potenzialanalyse an."
+ ]
+}

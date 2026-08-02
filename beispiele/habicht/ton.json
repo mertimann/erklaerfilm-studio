@@ -1,0 +1,66 @@
+{
+ "spuren": [
+  {
+   "datei": "musik/warm.mp3",
+   "von": 0.0,
+   "bis": 10.55,
+   "offset": 0.0,
+   "gain_db": -15,
+   "fade_in": 0.3,
+   "fade_out": 0.3
+  },
+  {
+   "datei": "musik/doku.mp3",
+   "von": 16.08,
+   "bis": 63.43,
+   "offset": 2.0,
+   "gain_db": -17,
+   "fade_in": 0.8,
+   "fade_out": 1.2
+  },
+  {
+   "datei": "musik/warm.mp3",
+   "von": 63.43,
+   "bis": 81.69,
+   "offset": 40.0,
+   "gain_db": -15,
+   "fade_in": 0.8,
+   "fade_out": 1.8
+  },
+  {
+   "datei": "sfx/flap.wav",
+   "von": 38.45,
+   "gain_db": -9
+  },
+  {
+   "datei": "sfx/stempel.wav",
+   "von": 45.75,
+   "gain_db": -5
+  },
+  {
+   "datei": "sfx/flap.wav",
+   "von": 49.09,
+   "gain_db": -11
+  },
+  {
+   "datei": "sfx/hit.wav",
+   "von": 51.82,
+   "gain_db": -8
+  },
+  {
+   "datei": "sfx/hit.wav",
+   "von": 54.24,
+   "gain_db": -8
+  },
+  {
+   "datei": "sfx/hit.wav",
+   "von": 56.06,
+   "gain_db": -8
+  },
+  {
+   "datei": "sfx/schrei.wav",
+   "von": 78.54,
+   "gain_db": -7
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "stil": "aquarell",
+ "szenen": [
+  {
+   "vo": "Manche Tage sind lang, wenn niemand vorbeikommt.",
+   "bild": "An elderly woman sitting alone by a window in soft morning light, a cup of tea untouched, quiet living room with plants, melancholic but tender atmosphere.",
+   "motion": "Steam rises gently from the tea cup, curtains move softly, light shifts slowly across the room."
+  },
+  {
+   "vo": "Herzenszeit schenkt genau das: Zeit. Ein Mensch, der zuhört, begleitet und einfach da ist.",
+   "bild": "A warm young companion sitting with the elderly woman at the kitchen table, both laughing over tea and photos, warm afternoon light.",
+   "motion": "The two women lean towards each other laughing softly, hands gesture warmly, light glows."
+  },
+  {
+   "vo": "Ob Spaziergang, Einkauf oder Arztbesuch – Ihre Begleitung kommt, so oft Sie möchten.",
+   "bild": "The pair strolling arm in arm through a park with autumn trees and falling leaves, a small market in the background.",
+   "motion": "They walk slowly arm in arm, leaves drift down, gentle camera follows sideways."
+  },
+  {
+   "vo": "Alle Begleiterinnen und Begleiter sind geprüft, versichert und kommen aus Ihrer Nachbarschaft.",
+   "bild": "Three friendly caretaker portraits side by side like painted vignettes, warm and trustworthy faces of different ages, soft floral frame elements.",
+   "motion": "The portraits breathe subtly, soft blossoms drift, warm light pulses gently."
+  },
+  {
+   "vo": "Schon ab neunundzwanzig Euro pro Besuch – ohne feste Vertragsbindung.",
+   "bild": "A small bouquet of flowers and a handwritten-style calendar page on a wooden table, a piggy bank nearby, cozy still life.",
+   "motion": "Petals fall softly onto the table, calendar page lifts slightly in a breeze."
+  },
+  {
+   "vo": "Herzenszeit. Damit kein Tag einsam bleibt. Vereinbaren Sie jetzt ein kostenloses Kennenlernen.",
+   "bild": "The elderly woman and her companion on a bench at golden hour overlooking a soft landscape, backs to the viewer, peaceful and hopeful.",
+   "motion": "Golden light deepens, birds pass far away, the two sit closer together."
+  }
+ ],
+ "stimme": "Kore",
+ "ton": "Warme, ruhige deutsche Erzählerin. Sanft, nah, empathisch, wie ein Hörbuch. An Absatzenden eine deutliche Pause lassen.",
+ "zeilen": [
+  "Manche Tage sind lang, wenn niemand vorbeikommt.",
+  "Herzenszeit schenkt genau das: Zeit. Ein Mensch, der zuhört, begleitet und einfach da ist.",
+  "Ob Spaziergang, Einkauf oder Arztbesuch – Ihre Begleitung kommt, so oft Sie möchten.",
+  "Alle Begleiterinnen und Begleiter sind geprüft, versichert und kommen aus Ihrer Nachbarschaft.",
+  "Schon ab neunundzwanzig Euro pro Besuch – ohne feste Vertragsbindung.",
+  "Herzenszeit. Damit kein Tag einsam bleibt. Vereinbaren Sie jetzt ein kostenloses Kennenlernen."
+ ]
+}

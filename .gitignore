@@ -1,0 +1,12 @@
+node_modules/
+mograph/out/
+mograph/public/vo/
+**/audio/
+**/keyframes/
+**/clips/
+**/final/
+**/musik/
+**/sfx/
+**/state.json
+finale_videos/
+.DS_Store

@@ -1,0 +1,45 @@
+{
+ "stil": "cartoon",
+ "szenen": [
+  {
+   "vo": "Kennen Sie den Blick, wenn der Napf leer ist – und der Laden schon zu hat?",
+   "bild": "A round fluffy dog staring sadly at an empty food bowl in a cozy kitchen at evening, huge pleading eyes, a cat facepalming behind him.",
+   "motion": "The dog's ears droop, he nudges the empty bowl, the cat shakes her head."
+  },
+  {
+   "vo": "PfotenPost liefert das Lieblingsfutter automatisch – bevor es ausgeht.",
+   "bild": "A cheerful delivery parcel with paw prints arriving at the door, the dog and cat peeking excitedly, tails up, bright morning.",
+   "motion": "The dog's tail wags fast, the cat's eyes widen, the parcel wobbles happily."
+  },
+  {
+   "vo": "Sie sagen uns einmal, was Ihr Tier frisst. Wir merken uns den Rest.",
+   "bild": "The cat sitting like a gourmet critic with a tiny menu card, choosing between food bowls, chef's kiss expression.",
+   "motion": "The cat taps the menu, nods approvingly, whiskers twitch."
+  },
+  {
+   "vo": "Jede Lieferung passt sich an: mehr, weniger, anderes Futter – eine Nachricht genügt.",
+   "bild": "A smartphone with a simple chat bubble, the parcel morphing sizes beside it - bigger, smaller - dog watching amazed.",
+   "motion": "The parcel playfully grows and shrinks, the dog's head tilts side to side."
+  },
+  {
+   "vo": "Versandkostenfrei, jederzeit kündbar – und die erste Box zum halben Preis.",
+   "bild": "Dog and cat sitting proudly beside an open box overflowing with food and a toy, confetti in the air, celebratory mood.",
+   "motion": "Confetti falls, the toy squeaks, both pets bounce slightly with joy."
+  },
+  {
+   "vo": "PfotenPost. Voller Napf, volles Glück. Bestellen Sie jetzt die Probebox.",
+   "bild": "The dog and cat hugging the parcel together under a warm lamp, content smiles, hearts floating, end-card composition with free space.",
+   "motion": "Hearts float upward, the pets snuggle closer, warm light glows."
+  }
+ ],
+ "stimme": "Kore",
+ "ton": "Fröhliche, herzliche deutsche Erzählerin. Verspielt, aber klar. An Absatzenden eine deutliche Pause lassen.",
+ "zeilen": [
+  "Kennen Sie den Blick, wenn der Napf leer ist – und der Laden schon zu hat?",
+  "PfotenPost liefert das Lieblingsfutter automatisch – bevor es ausgeht.",
+  "Sie sagen uns einmal, was Ihr Tier frisst. Wir merken uns den Rest.",
+  "Jede Lieferung passt sich an: mehr, weniger, anderes Futter – eine Nachricht genügt.",
+  "Versandkostenfrei, jederzeit kündbar – und die erste Box zum halben Preis.",
+  "PfotenPost. Voller Napf, volles Glück. Bestellen Sie jetzt die Probebox."
+ ]
+}

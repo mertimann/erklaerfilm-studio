@@ -1,0 +1,45 @@
+{
+ "stil": "ki",
+ "szenen": [
+  {
+   "vo": "Ihr Posteingang: dreihundert Mails. Ihr Tag: acht Stunden.",
+   "bild": "A German office worker (mid-forties, short dark hair, light-blue shirt) at his desk being buried by an avalanche of white letters and documents pouring down on him from above like snow, arms raised, papers up to his chest, realistic modern German office, morning light.",
+   "motion": "More letters rain down and pile up around him, he struggles, papers slide like an avalanche."
+  },
+  {
+   "vo": "Nexoro liest mit, sortiert und beantwortet Routinefragen – ganz von selbst.",
+   "bild": "the same German office worker from the reference image (mid-forties, short dark hair, light-blue shirt) leaning back relaxed with a coffee while hundreds of letters fly AWAY from his desk in perfectly ordered streams through the office air, sorting themselves into neat open drawers and trays, choreographed like a flock of birds.",
+   "motion": "The letters stream elegantly through the air into the drawers, he sips his coffee and watches contently."
+  },
+  {
+   "vo": "Angebote, Rechnungen, Terminanfragen: erledigt, bevor Sie den Kaffee geholt haben.",
+   "bild": "the same German office worker from the reference image (mid-forties, short dark hair, light-blue shirt) standing at the office coffee machine chatting with a colleague, while behind him through the glass wall documents stack themselves into three perfectly tidy towers on his desk, no person touching them.",
+   "motion": "He presses the coffee button relaxed, behind the glass the paper towers finish stacking themselves."
+  },
+  {
+   "vo": "Und Sie behalten die Kontrolle: Nichts geht raus, was Sie nicht freigegeben haben.",
+   "bild": "A row of paper airplanes hovering frozen in mid-air in a queue before a small red-white barrier gate on the desk of the same German office worker from the reference image (mid-forties, short dark hair, light-blue shirt), he holds one finger raised like a conductor about to give the signal, office background.",
+   "motion": "He lowers his finger, the barrier lifts, the paper airplanes fly off one after another through the open window."
+  },
+  {
+   "vo": "Nexoro läuft auf deutschen Servern – verschlüsselt und DSGVO-konform.",
+   "bild": "A massive round steel bank-vault door built seamlessly into the wall of a normal bright German office, an IT engineer in a polo calmly turning the big wheel to lock it, a small potted plant beside it, realistic.",
+   "motion": "She turns the vault wheel until it locks with a heavy final movement, the light glints on the steel."
+  },
+  {
+   "vo": "Nexoro. Ihr Team, verdoppelt. Testen Sie jetzt vier Wochen kostenlos.",
+   "bild": "Golden evening light in the modern German office: the same German office worker from the reference image (mid-forties, short dark hair, light-blue shirt) at his desk, and beside him an identical translucent twin of himself working in perfect sync at a second keyboard, both smiling slightly, warm hopeful mood.",
+   "motion": "Both type in perfect sync, the twin fades gently as they both lean back satisfied."
+  }
+ ],
+ "stimme": "Charon",
+ "ton": "Klarer, moderner deutscher Erzähler. Präzise und zuversichtlich, leicht technisch. An Absatzenden eine deutliche Pause.",
+ "zeilen": [
+  "Ihr Posteingang: dreihundert Mails. Ihr Tag: acht Stunden.",
+  "Nexoro liest mit, sortiert und beantwortet Routinefragen – ganz von selbst.",
+  "Angebote, Rechnungen, Terminanfragen: erledigt, bevor Sie den Kaffee geholt haben.",
+  "Und Sie behalten die Kontrolle: Nichts geht raus, was Sie nicht freigegeben haben.",
+  "Nexoro läuft auf deutschen Servern – verschlüsselt und DSGVO-konform.",
+  "Nexoro. Ihr Team, verdoppelt. Testen Sie jetzt vier Wochen kostenlos."
+ ]
+}

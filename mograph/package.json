@@ -1,0 +1,33 @@
+{
+  "name": "mograph",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@remotion/animation-utils": "^4.0.500",
+    "@remotion/cli": "^4.0.500",
+    "@remotion/effects": "^4.0.500",
+    "@remotion/lottie": "^4.0.500",
+    "@remotion/motion-blur": "^4.0.500",
+    "@remotion/noise": "^4.0.500",
+    "@remotion/paths": "^4.0.500",
+    "@remotion/renderer": "^4.0.500",
+    "@remotion/shapes": "^4.0.500",
+    "@remotion/transitions": "^4.0.500",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "remotion": "^4.0.500"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  }
+}
