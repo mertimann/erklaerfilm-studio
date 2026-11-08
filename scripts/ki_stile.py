@@ -125,4 +125,23 @@ STILE = {
             "turn, one clear gesture. Long held cinematic shot. Keep the flat "
             "vector illustration style of the source image exactly."),
     },
+    "3d": {
+        "label": "3D-Explainer",
+        "stimme": "Charon",
+        "ton": ("Freundlicher, klarer deutscher Werbesprecher. Modern, zuversichtlich, "
+                "zügig, aber nicht gehetzt. An Absatzenden eine kurze Pause."),
+        "stilblock": (
+            "Modern stylized 3D animated explainer render, like a premium "
+            "Pixar-lite advertising short: soft rounded 3D characters with "
+            "simplified friendly faces, clean glossy and matte materials, soft "
+            "global illumination, gentle ambient occlusion, bright clean colour "
+            "palette with one warm accent colour, shallow depth of field, tidy "
+            "uncluttered sets, product-shot quality lighting. No text, no "
+            "letters, no logos in the image. "),
+        "motion_stil": (
+            " Smooth polished 3D animation: one clean camera move (slow dolly or "
+            "orbit), characters move with soft squash-and-stretch appeal, objects "
+            "animate with satisfying easing. Keep the stylized 3D render look, "
+            "materials and characters of the source image exactly."),
+    },
 }

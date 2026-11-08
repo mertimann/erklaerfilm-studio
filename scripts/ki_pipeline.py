@@ -16,7 +16,7 @@ plus die Lehren aus der Recherche):
 
 Aufruf:
     export KIE_API_KEY=...
-    python3 scripts/ki_pipeline.py cases/<fall> [vo|kf|clips|final|all]
+    python3 scripts/ki_pipeline.py cases/<fall> [vo|fig|kf|clips|final|all]
 
 Erwartet cases/<fall>/skript.json:
     {"stil": "aquarell",                 # Preset aus scripts/ki_stile.py
@@ -35,6 +35,7 @@ from ki_stile import STILE
 KF_T2I = "gpt-image-2-text-to-image"
 KF_I2I = "gpt-image-2-image-to-image"
 VIDEO = "grok-imagine/image-to-video"
+VIDEO_KLING = "kling-3.0/video"   # Variante 2: Figuren als kling_elements
 FPS = 30
 
 
@@ -78,10 +79,11 @@ def schnitte(cfg, beats=None):
         teile = [(s["bild"], s["motion"])]
         if s.get("bild2"): teile.append((s["bild2"], s["motion2"]))
         if s.get("bild3"): teile.append((s["bild3"], s["motion3"]))
+        figs = s.get("figuren", [])
         anteile = {1: [1.0], 2: [0.55, 0.45], 3: [0.40, 0.30, 0.30]}[len(teile)]
         for k, ((b, m), a) in enumerate(zip(teile, anteile)):
             sid = f"{i+1:02d}" + ("" if len(teile) == 1 else "abc"[k])
-            out.append({"id": sid, "bild": b, "motion": m,
+            out.append({"id": sid, "bild": b, "motion": m, "figuren": figs,
                         "dauer": round(beat * a, 2) if beat else None})
     return out
 
@@ -97,6 +99,56 @@ def phase_vo(fall, cfg, stil):
     mg_vo.main(fall)
 
 
+def phase_fig(fall, cfg, stil):
+    """Figurenblaetter (Variante 2): je Figur eine Frontansicht (Text-zu-Bild)
+    und eine 3/4-Ansicht (Bild-zu-Bild gegen die Front). Beide URLs dienen
+    spaeter als Referenz fuer Keyframes UND als kling_elements im Clip.
+    >>> FIGUREN-GATE: Blaetter ansehen, BEVOR Keyframes entstehen. <<<"""
+    st = state_laden(fall)
+    fdir = os.path.join(fall, "figuren")
+    os.makedirs(fdir, exist_ok=True)
+    blatt = (" Character design reference sheet: ONE single character, full body, "
+             "neutral friendly pose, plain light grey seamless studio background, "
+             "even soft lighting, centred. No text, no letters, no watermark.")
+    for f in cfg.get("figuren", []):
+        rec = st.setdefault("figuren", {}).setdefault(f["name"], {})
+        pv = os.path.join(fdir, f["name"] + "_front.png")
+        if not (os.path.exists(pv) and rec.get("front")):
+            inp = {"prompt": stil["stilblock"] + f["beschreibung"]
+                   + " Front view." + blatt, "aspect_ratio": "1:1"}
+            r = retry(lambda: kie.run(KF_T2I, inp, pv, timeout=600))
+            rec["front"] = r["urls"][0]; state_sichern(fall, st)
+        ps = os.path.join(fdir, f["name"] + "_34.png")
+        if not (os.path.exists(ps) and rec.get("dreiviertel")):
+            inp = {"prompt": ("Use EXACTLY the same character as the reference image "
+                              "- same face, hair, body, clothes, colours, render style. "
+                              "Now shown in a three-quarter view, slightly turned, "
+                              "upper body and face clearly visible." + blatt),
+                   "image_urls": [rec["front"]], "aspect_ratio": "1:1"}
+            r = retry(lambda: kie.run(KF_I2I, inp, ps, timeout=600))
+            rec["dreiviertel"] = r["urls"][0]; state_sichern(fall, st)
+        print(f"  figur {f['name']} ok", flush=True)
+
+
+def fig_refs(st, namen):
+    out = []
+    for n in namen:
+        r = st.get("figuren", {}).get(n, {})
+        out += [u for u in (r.get("front"), r.get("dreiviertel")) if u]
+    return out
+
+
+def fig_elements(cfg, st, namen):
+    besch = {f["name"]: f["beschreibung"] for f in cfg.get("figuren", [])}
+    els = []
+    for n in namen[:3]:                      # Kling: max. 3 Elemente je Clip
+        urls = fig_refs(st, [n])
+        if len(urls) >= 2:
+            els.append({"name": n, "description": besch.get(n, n)[:200],
+                        "element_input_urls": urls[:4]})
+    return els
+
+
 def phase_kf(fall, cfg, stil):
     st = state_laden(fall)
     kf_dir = os.path.join(fall, "keyframes")
@@ -108,8 +160,16 @@ def phase_kf(fall, cfg, stil):
     rec0 = st["szenen"].setdefault(s0["id"], {})
     p0 = os.path.join(kf_dir, s0["id"] + ".png")
     if not (os.path.exists(p0) and rec0.get("kf_url")):
-        inp = {"prompt": stil["stilblock"] + s0["bild"] + zusatz, "aspect_ratio": "16:9"}
-        r = retry(lambda: kie.run(KF_T2I, inp, p0, timeout=600))
+        refs0 = fig_refs(st, s0["figuren"])
+        if refs0:   # Variante 2: auch der Anker steht auf den Figurenblaettern
+            inp = {"prompt": ("The reference images are character sheets - use EXACTLY "
+                              "these characters (faces, hair, clothes, colours). Scene: "
+                              + stil["stilblock"] + s0["bild"] + zusatz),
+                   "image_urls": refs0, "aspect_ratio": "16:9"}
+            r = retry(lambda: kie.run(KF_I2I, inp, p0, timeout=600))
+        else:
+            inp = {"prompt": stil["stilblock"] + s0["bild"] + zusatz, "aspect_ratio": "16:9"}
+            r = retry(lambda: kie.run(KF_T2I, inp, p0, timeout=600))
         rec0["kf_url"] = r["urls"][0]; rec0["kf_credits"] = r.get("credits")
         state_sichern(fall, st)
     print("  kf " + s0["id"] + " (Anker) ok", flush=True)
@@ -120,11 +180,14 @@ def phase_kf(fall, cfg, stil):
         p = os.path.join(kf_dir, sc["id"] + ".png")
         if os.path.exists(p) and rec.get("kf_url"):
             return f"kf {sc['id']} vorhanden"
+        refs = fig_refs(st, sc["figuren"])
         inp = {"prompt": ("Keep the exact same visual style, palette, rendering "
                           "technique AND the same recurring characters as the "
-                          "reference image. New scene: "
+                          "reference images (first image = style anchor, the "
+                          "others = character sheets, match them exactly). New scene: "
                           + stil["stilblock"] + sc["bild"] + zusatz),
-               "image_urls": [anker], "aspect_ratio": "16:9"}
+               "image_urls": ([anker] + refs)[:8], "input_urls": ([anker] + refs)[:8],
+               "aspect_ratio": "16:9"}
         r = retry(lambda: kie.run(KF_I2I, inp, p, timeout=600))
         rec["kf_url"] = r["urls"][0]; rec["kf_credits"] = r.get("credits")
         return f"kf {sc['id']} ok"
@@ -150,6 +213,20 @@ def phase_clips(fall, cfg, stil):
             return f"clip {sc['id']} vorhanden"
         if not rec.get("kf_url"):
             return f"clip {sc['id']} UEBERSPRUNGEN - kein Keyframe"
+        if cfg.get("video") == "kling":
+            d = max(3, min(15, math.ceil(sc["dauer"] + 0.6)))
+            els = fig_elements(cfg, st, sc["figuren"])
+            tags = " ".join("@" + e["name"] for e in els)
+            inp = {"image_urls": [rec["kf_url"]],
+                   "prompt": (sc["motion"] + (" Characters: " + tags + "." if tags else "")
+                              + stil["motion_stil"] + " No text anywhere.")[:2400],
+                   "duration": str(d), "mode": cfg.get("kling_mode", "pro"),
+                   "sound": False, "multi_shots": False, "aspect_ratio": "16:9"}
+            if els:
+                inp["kling_elements"] = els
+            r = retry(lambda: kie.run(VIDEO_KLING, inp, p, timeout=1800))
+            rec["clip_credits"] = r.get("credits"); rec["clip_dur"] = d
+            return f"clip {sc['id']} ok ({d}s, kling)"
         d = max(6, min(12, math.ceil(sc["dauer"] + 0.8)))
         inp = {"image_urls": [rec["kf_url"]],
                "prompt": sc["motion"] + stil["motion_stil"] + " No text anywhere.",
@@ -185,7 +262,7 @@ def saetze_verteilen(vo, n):
 def untertitel_pngs(fall, cfg, beats, seg_dir):
     """Untertitel je Einstellung (satzgenau) + optionale KI-Kennzeichnung."""
     from PIL import Image, ImageDraw, ImageFont
-    font = ImageFont.truetype(next(p for p in ["/System/Library/Fonts/Helvetica.ttc", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"] if os.path.exists(p)), 30)
+    font = ImageFont.truetype(next(p for p in ["/usr/share/fonts/truetype/google-fonts/Poppins-Medium.ttf", "/System/Library/Fonts/Helvetica.ttc", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"] if os.path.exists(p)), 30)
     font_k = ImageFont.truetype(next(p for p in ["/System/Library/Fonts/Helvetica.ttc", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"] if os.path.exists(p)), 17)
     pfade = []
     liste = schnitte(cfg, beats)
@@ -210,8 +287,8 @@ def untertitel_pngs(fall, cfg, beats, seg_dir):
         for z in zeilen:
             b = d.textbbox((0, 0), z, font=font)
             x = (1280 - (b[2] - b[0])) / 2
-            d.text((x, y), z, font=font, fill=(255, 255, 255, 215),
-                   stroke_width=2, stroke_fill=(20, 24, 36, 175))
+            d.text((x, y), z, font=font, fill=(255, 255, 255, 255),
+                   stroke_width=3, stroke_fill=(15, 20, 32, 210))
             y += 38
         if cfg.get("kennzeichnung"):
             kt = "KI-generiertes Video"
@@ -238,8 +315,8 @@ def phase_final(fall, cfg, stil):
             seg = os.path.join(seg_dir, sc["id"] + ".mp4")
             if not os.path.exists(seg):
                 subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", clip,
-                    "-vf", ("scale=1280:720:force_original_aspect_ratio=increase,"
-                            "crop=1280:720,tpad=stop_mode=clone:stop_duration=15,"
+                    "-vf", ("scale=1920:1080:force_original_aspect_ratio=increase,"
+                            "crop=1920:1080,tpad=stop_mode=clone:stop_duration=15,"
                             f"fps={FPS}"),
                     "-t", f"{sc['dauer']:.2f}", "-an",
                     "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", seg],
@@ -261,7 +338,7 @@ def phase_final(fall, cfg, stil):
     quelle = "[0:v]"
     for i, (_, dauer) in enumerate(overlays):
         ziel_lbl = f"[v{i}]"
-        kette.append(f"{quelle}[{i + 2}:v]overlay=0:0:enable='between(t,{t:.2f},{t + dauer:.2f})'{ziel_lbl}")
+        kette.append(f"[{i + 2}:v]scale=1920:1080[s{i}];{quelle}[s{i}]overlay=0:0:enable='between(t,{t:.2f},{t + dauer:.2f})'{ziel_lbl}")
         quelle = ziel_lbl
         t += dauer
     fg = ";".join(kette)
@@ -287,6 +364,8 @@ if __name__ == "__main__":
     was = sys.argv[2] if len(sys.argv) > 2 else "all"
     cfg, stil = lade(fall)
     if was in ("vo", "all"):    print("== VO ==", flush=True);    phase_vo(fall, cfg, stil)
+    if was == "fig" or (was == "all" and cfg.get("figuren")):
+        print("== FIGUREN ==", flush=True); phase_fig(fall, cfg, stil)
     if was in ("kf", "all"):    print("== KEYFRAMES ==", flush=True); phase_kf(fall, cfg, stil)
     if was in ("clips", "all"): print("== CLIPS ==", flush=True);  phase_clips(fall, cfg, stil)
     if was in ("final", "all"): print("== FINAL ==", flush=True);  phase_final(fall, cfg, stil)

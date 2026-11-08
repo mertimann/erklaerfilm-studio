@@ -10,3 +10,5 @@ mograph/public/vo/
 **/state.json
 finale_videos/
 .DS_Store
+__pycache__/
+*.log

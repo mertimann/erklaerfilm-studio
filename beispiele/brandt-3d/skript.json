@@ -1,0 +1,83 @@
+{
+ "stil": "3d",
+ "video": "kling",
+ "kling_mode": "pro",
+ "kennzeichnung": false,
+ "figuren": [
+  {
+   "name": "anna",
+   "beschreibung": "Anna, a German mother in her late thirties, slim, warm friendly face, shoulder-length wavy brown hair, mustard yellow chunky knit sweater, dark blue jeans, white sneakers."
+  },
+  {
+   "name": "jens",
+   "beschreibung": "Jens, a German father in his forties, medium build, short dark brown hair, light stubble, light grey hoodie, dark grey chinos, brown leather shoes."
+  },
+  {
+   "name": "tom",
+   "beschreibung": "Tom, a friendly German heating installer in his thirties, sturdy muscular build, short blond hair, short blond beard, kind brown eyes, navy blue polo shirt under navy bib-and-brace work overalls with orange trim and dark grey knee pads, navy blue cap, grey safety boots."
+  }
+ ],
+ "szenen": [
+  {
+   "vo": "Schon wieder dreihundert Euro nachzahlen? Und das nur für die Heizung?",
+   "bild": "Cozy modern German living room in a 1990s family house, the mother Anna (late thirties, shoulder-length brown hair, mustard yellow knit sweater) holding a heating bill letter in shock, the father Jens (forties, short dark hair, light grey hoodie) leaning in worried, a radiator under the window. Distinctly GERMAN setting, European sockets and radiators, nothing American.",
+   "motion": "Anna opens the letter, her eyes widen, Jens leans in and raises his eyebrows. The two characters keep exactly the same faces and clothes throughout.",
+   "figuren": [
+    "anna",
+    "jens"
+   ]
+  },
+  {
+   "vo": "Das Problem steckt im Keller. Ihre alte Ölheizung frisst jeden Monat bares Geld – und es wird jedes Jahr mehr.",
+   "bild": "The mother Anna and the father Jens crouch fearfully on the left side of a German basement boiler room, watching an old rusty beige oil boiler with a cute but greedy monster mouth and glowing eyes gobbling a stream of gold euro coins, oil tank in the background. Distinctly GERMAN setting, nothing American. No flags, no famous landmarks, no TV tower - just an ordinary small-town Lower Rhine neighbourhood.",
+   "motion": "The boiler monster chomps the coins one by one and burps a small puff of smoke, Anna and Jens flinch and hold on to each other. There is exactly one boiler. The characters keep exactly the same faces and clothes throughout.",
+   "figuren": [
+    "anna",
+    "jens"
+   ]
+  },
+  {
+   "vo": "Brandt Haustechnik aus Viersen tauscht sie gegen eine moderne Wärmepumpe. Sauber, schnell und termintreu.",
+   "bild": "The same German basement, now bright and clean, the installer Tom (short blond beard, navy polo shirt under navy bib overalls with orange trim, navy cap) proudly placing his hand on a sleek white modern heat pump indoor unit, the old boiler gone. Distinctly GERMAN setting, nothing American.",
+   "motion": "Tom gives the heat pump a satisfied pat and a thumbs up, a small light on the unit turns on. Tom keeps exactly the same face and clothes throughout.",
+   "figuren": [
+    "tom"
+   ]
+  },
+  {
+   "vo": "Die holt Wärme sogar aus kalter Winterluft. Leise, effizient und ganz ohne Öl.",
+   "bild": "Exterior of the German family house with white render facade and grey tiled roof on a frosty winter evening, a sleek white heat pump outdoor unit beside the wall, swirling warm orange light ribbons drawn from the cold blue air into the house, windows glowing warm. Distinctly GERMAN suburb, nothing American.",
+   "motion": "The fan of the outdoor unit spins softly, warm orange light ribbons swirl from the cold air into the house, windows glow brighter. Slow orbit camera. There is exactly one house and one outdoor unit.",
+   "figuren": []
+  },
+  {
+   "vo": "Der Staat fördert den Tausch kräftig – und wir kümmern uns um den Antrag. So zahlen Sie Monat für Monat weniger.",
+   "bild": "A cheerful glossy pink piggy bank on the living room table, gold euro coins flying back into its slot in a happy arc, Anna and Jens smiling behind it. Distinctly GERMAN interior, nothing American. No flags, no famous landmarks, no TV tower - just an ordinary small-town Lower Rhine neighbourhood.",
+   "motion": "Coins fly in a smooth arc into the piggy bank, the piggy bank bounces happily, then Anna and Jens raise their open hands and high-five. The characters keep exactly the same faces and clothes throughout.",
+   "figuren": [
+    "anna",
+    "jens"
+   ]
+  },
+  {
+   "vo": "Lassen Sie sich jetzt kostenlos beraten. Brandt Haustechnik – Ihre Heizung in guten Händen.",
+   "bild": "End card: the family Anna and Jens relaxed on the sofa under a blanket, the installer Tom waving friendly at the doorway, warm cosy light, generous empty space on the left side for a logo. Distinctly GERMAN interior, nothing American.",
+   "motion": "Tom waves, Anna and Jens smile and snuggle into the blanket, gentle slow push-in. The characters keep exactly the same faces and clothes throughout.",
+   "figuren": [
+    "anna",
+    "jens",
+    "tom"
+   ]
+  }
+ ],
+ "stimme": "Charon",
+ "ton": "Freundlicher, klarer deutscher Werbesprecher. Modern, zuversichtlich, zügig, aber nicht gehetzt. An Absatzenden eine kurze Pause.",
+ "zeilen": [
+  "Schon wieder dreihundert Euro nachzahlen? Und das nur für die Heizung?",
+  "Das Problem steckt im Keller. Ihre alte Ölheizung frisst jeden Monat bares Geld – und es wird jedes Jahr mehr.",
+  "Brandt Haustechnik aus Viersen tauscht sie gegen eine moderne Wärmepumpe. Sauber, schnell und termintreu.",
+  "Die holt Wärme sogar aus kalter Winterluft. Leise, effizient und ganz ohne Öl.",
+  "Der Staat fördert den Tausch kräftig – und wir kümmern uns um den Antrag. So zahlen Sie Monat für Monat weniger.",
+  "Lassen Sie sich jetzt kostenlos beraten. Brandt Haustechnik – Ihre Heizung in guten Händen."
+ ]
+}
